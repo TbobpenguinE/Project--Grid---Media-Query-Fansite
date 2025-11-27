@@ -107,6 +107,20 @@ img {
   font-size: 14px;
 }
 
+/* Sidebar and extra images */
+.home-side img,
+.home-extra img {
+  max-height: 250px;
+  width: auto;
+  margin: 10px 0;
+}
+
+/* Optional helper: add class="center-img" to any <img> you want centered */
+.center-img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* -------------------------
    EPISODES PAGE (episodes.html)
    ------------------------- */
@@ -188,9 +202,10 @@ img {
   margin-bottom: 20px;
 }
 
+/* DIFFERENT GRID LAYOUT: 2 columns instead of 3 */
 .gal-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
@@ -243,7 +258,6 @@ p {
 
 /* -------------------------
    MEDIA QUERIES
-   (simple: just change grid columns and nav layout)
    ------------------------- */
 
 @media (max-width: 700px) {
@@ -273,8 +287,9 @@ p {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* Gallery: switch from 2 columns to 1 column */
   .gal-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 }
 
@@ -282,8 +297,5 @@ p {
   .ep-grid {
     grid-template-columns: 1fr;
   }
-
-  .gal-grid {
-    grid-template-columns: 1fr;
-  }
+  /* no extra gal-grid rule needed; it is already 1 column from the 900px query */
 }
